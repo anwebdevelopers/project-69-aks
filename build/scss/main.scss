@@ -86,40 +86,76 @@ a {
 }
 .button {
 	@include btn;
-	padding: 1.5rem 3rem;
+	padding: 1.2rem 3rem;
 	font-size: 1.2rem;
 	font-weight: 700;
-	line-height: 1;
+	line-height: 1.4;
 	letter-spacing: .1em;
 	text-transform: uppercase;
 	color: inherit;
 	border: 2px solid $main-color;
 	//background-color: $red;
 	transition: all .5s ease;
-	&:hover, &:active {
-		//background-color: darken($red, 15%);
+
+	&.button_black {
+		color: #000;
+		border-color: #000;
+		// &:hover, &:active {
+		// 	color: #fff;
+		// 	background-color: $main-color;
+		// 	border-color: $main-color;
+		// }
 	}
 	&.button_white {
 		color: #000;
 		border-color: #fff;
 		background-color: #fff;
-		&:hover, &:active {
-			color: #fff;
-			background-color: $main-color;
-			//border-color: $main-color;
-		}
+		// &:hover, &:active {
+		// 	color: #fff;
+		// 	background-color: $main-color;
+		// 	border-color: $main-color;
+		// }
+	}
+	&:hover, &:active {
+		color: #fff;
+		background-color: $main-color;
+		border-color: $main-color;
 	}
 }
 .title {
 	margin: 0;
-	font-size: 3.2rem;
-	font-weight: 500;
+	font-weight: 700;
+	line-height: 1.2;
 	text-transform: uppercase;
+	font-family: "Bebas Neue";
+	&.title_orange {
+		color: $main-color;
+	}
+}
+h1.title {
+	font-size: 7.2rem;
+	padding-bottom: 1rem;
+	background-image: linear-gradient($main-color, $main-color);
+	background-position: 0 100%;
+	background-size: 8rem .4rem;
+	background-repeat: no-repeat;
+}
+h2.title {
+	margin: 0;
+	font-size: 4.8rem;
+}
+.subtitle {
+	margin: 3rem 0 0 0;
+	font-size: 2.4rem;
 }
 
 //Custom Styles Here
 @import "components/header.scss";
 @import "components/home.scss";
+@import "components/offer.scss";
+@import "components/completed.scss";
+@import "components/about.scss";
+@import "components/keys.scss";
 
 @import "components/footer.scss";
 
@@ -130,7 +166,7 @@ a {
 
 //Load Libs SASS
 //@import "html/libs/animate/animate.sass";
-//@import "html/libs/OwlCarousel2-2.2.1/dist/assets/owl.carousel.min";
+@import "html/libs/OwlCarousel2-2.2.1/dist/assets/owl.carousel.min";
 //@import "html/libs/superfish/dist/css/superfish";
 //@import "html/libs/font-awesome/scss/font-awesome.scss";
 //@import "html/libs/jQuery.mmenu/dist/css/jquery.mmenu.all";
@@ -147,11 +183,17 @@ a {
 }
 
 @media only screen and (max-width : 768px) {
-	
+
 }
 
 @media only screen and (max-width : 640px) {
-
+	.title,
+	.subtitle {
+		text-align: center;
+	}
+	h1.title {
+		background-position: 50% 100%;
+	}
 }
 
 @media only screen and (max-width : 480px) {
