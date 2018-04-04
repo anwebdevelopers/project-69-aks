@@ -26,8 +26,10 @@
 .keys__slider {
     flex: 0 0 auto;
     width: 47.5%;
+    margin: 0 0 0 5%;
 }
 .keys__slider-title {
+    padding-right: 10rem;
     margin: 0;
     font-size: 1.3rem;
     font-weight: 700;
@@ -35,12 +37,73 @@
     text-transform: uppercase;
 }
 .keys__slider-box {
+    margin: 2rem 0 0 0;
+    &.owl-carousel {
+        padding: 6rem 0 0 0;
+        margin-top: -3rem;
+        position: relative;
+        .owl-nav {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            justify-content: flex-end;
+            .owl-next,
+            .owl-prev {
+                flex: 0 0 auto;
+                width: 4rem;
+                height: 4rem;
+                transition: all 0.3s ease;
+                background-color: #000;
 
+                &:hover, &:active {
+                    background-color: $main-color;
+                }
+                position: relative;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 1.8rem;
+                    height: 1.8rem;
+                    border-left: .3rem solid #fff;
+                    border-bottom: .3rem solid #fff;
+                    transition: all 0.3s ease;
+                }
+
+            }
+
+            .owl-prev {
+                left: 0;
+                margin-right: .2rem;
+                &:before {
+                    left: 60%;
+                    transform: translate(-50%, -50%) rotate(45deg);
+                }
+            }
+
+            .owl-next {
+                right: 0;
+                margin-left: .2rem;
+                &:before {
+                    left: 40%;
+                    transform: translate(-50%, -50%) rotate(-135deg);
+                }
+            }
+        }
+    }
 }
 .keys__slider-item {
-    min-height: 29rem;
+    min-height: 30rem;
+    padding: 2rem 3rem;
+    color: #fff;
 
     position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 .keys__slider-item-img {
     margin: 0;
@@ -65,4 +128,142 @@
         bottom: 0;
         background-color: rgba(76, 36, 1, 0.5);
     }
+}
+.keys__slider-item-text {
+    margin: 0;
+    font-size: 2.8rem;
+    font-weight: 700;
+	text-transform: uppercase;
+	font-family: "Bebas Neue";
+}
+.keys__note {
+    margin: 6rem 25% 0 10%;
+    padding: 0 0 0 15%;
+    background-image: linear-gradient($main-color, $main-color);
+	background-position: 0 1.5rem;
+	background-size: 18% .4rem;
+	background-repeat: no-repeat;
+
+    line-height: 2;
+    *:first-child {
+		margin-top: 0;
+	}
+	*:last-child {
+		margin-bottom: 0;
+	}
+}
+.keys__grid {
+    margin: 6rem 0 0 0;
+    column-count: 3;
+    column-gap: 1rem;
+}
+.keys__grid-item {
+    overflow: hidden;
+    &+.keys__grid-item {
+        margin-top: 1rem;
+    }
+    img {
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        height: auto;
+    }
+    &.keys__grid-item_first {
+        padding: 9rem 6% 3rem 6%;
+        background-image: linear-gradient(135deg, $main-color-gradient 0%, $main-color 100%);
+        font-family: "Bebas Neue";
+        color: #fff;
+
+        position: relative;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 2rem;
+            width: 5rem;
+            height: 8rem;
+            //transform: translateY(-100%);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='50' height='80' viewBox='0 0 50 80'%3E%3Cdefs%3E%3Cpath id='9djna' d='M408.87 1496.3l-5 15a2.5 2.5 0 0 1-2.37 1.7H394v7.5a2.5 2.5 0 0 1-2.5 2.5h-5v1.47a4.91 4.91 0 0 0 3.02 4.58 14.92 14.92 0 0 1 5.03 24.5A14.87 14.87 0 0 1 384 1558c-8.27 0-15-6.73-15-15a2.5 2.5 0 1 1 5 0c0 5.51 4.48 10 10 10a9.9 9.9 0 0 0 7.02-2.98 9.9 9.9 0 0 0-3.34-16.32 9.95 9.95 0 0 1-6.18-9.23V1523h-5a2.5 2.5 0 0 1-2.5-2.5v-7.5h-7.5a2.5 2.5 0 0 1-2.37-1.7l-5-15a2.5 2.5 0 0 1 0-1.6l5-15a2.5 2.5 0 0 1 2.37-1.7h35a2.5 2.5 0 0 1 2.37 1.7l5 15a2.5 2.5 0 0 1 0 1.6zm-13.34-13.3h-4.73l-8.33 25h4.73zm-18.33 25l8.33-25h-4.73l-8.33 25zm-9.45-1.66l7.78-23.34h-7.23l-4.16 12.5zM389 1513h-10v5h10zm14.86-17.5l-3.6-10.84-7.8 23.34h7.24z'/%3E%3C/defs%3E%3Cg%3E%3Cg transform='translate%28-359 -1478%29'%3E%3Cg%3E%3Cuse fill='%23fff' xlink:href='%239djna'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-size: contain;
+            background-position: 0 100%;
+            background-repeat: no-repeat;
+
+        }
+    }
+
+    &.keys__grid-item_last {
+        padding: 4rem 6%;
+        font-family: "Bebas Neue";
+        background-color: #ecf8ff;
+    }
+}
+.keys__grid-item-title {
+    padding: 1.5rem 0 0 0;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.2;
+
+    span {
+        padding: 1.5rem 0 0 0;
+        background-image: linear-gradient(currentColor, currentColor);
+    	background-position: 0 0;
+    	background-size: 100% .4rem;
+    	background-repeat: no-repeat;
+    }
+}
+.keys__grid-item-link {
+    color: inherit;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    transition: all .5s ease;
+    &:hover, &:active {
+        color: $main-color;
+    }
+}
+@media only screen and (max-width : 1200px) {
+
+}
+
+@media only screen and (max-width : 992px) {
+    .keys__grid-item-title {
+        font-size: 3.8rem;
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    .keys__box {
+        display: block;
+    }
+    .keys__list {
+        width: auto;
+    }
+    .keys__slider {
+        margin: 6rem 0 0 0;
+        width: auto;
+    }
+    .keys__note {
+        margin: 6rem 0 0 0;
+        background-size: 12% .4rem;
+    }
+    .keys__grid {
+        column-count: 2;
+    }
+
+}
+
+@media only screen and (max-width : 640px) {
+    .keys__grid-item-title {
+        font-size: 3.4rem;
+    }
+}
+
+@media only screen and (max-width : 480px) {
+    .keys__grid {
+        column-count: auto;
+    }
+}
+
+@media only screen and (max-width : 360px) {
+
 }

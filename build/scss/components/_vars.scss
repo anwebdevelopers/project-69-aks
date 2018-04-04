@@ -9,7 +9,7 @@ $main-color-gradient: #fe8404;
     outline: none;
     text-decoration: none;
     background-color: transparent;
-    cursor: default;
+    cursor: pointer;
 }
 @mixin pseudo($display: block, $pos: absolute, $content: ''){
   content: $content;

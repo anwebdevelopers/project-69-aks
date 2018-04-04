@@ -1,0 +1,223 @@
+.contacts {
+    margin: 6rem 0 0 0;
+}
+.contacts__box {
+    margin: 6rem -1rem 0 -1rem;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+.contacts__address,
+.contacts__phone,
+.contacts__message,
+.contacts__form {
+    flex: 0 0 auto;
+    width: calc(33.33% - 2rem);
+    margin: 0 1rem 6rem 1rem;
+}
+.contacts__address-icon,
+.contacts__phone-icon,
+.contacts__message-icon {
+    margin: 0;
+    img {
+        display: inline-block;
+        vertical-align: top;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+    }
+}
+.contacts__address-box,
+.contacts__phone-box,
+.contacts__message-box{
+    margin: 4rem 0 0 0;
+}
+.contacts__address-box {
+    font-style: normal;
+}
+.contacts__phone-box {
+    padding: 0;
+    list-style: none;
+    li {
+        &+li {
+            margin: 1rem 0 0 0;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            transition: all .5s ease;
+            &:hover, &:active {
+                color: $main-color;
+            }
+        }
+    }
+}
+
+.contacts__item-message-title {
+    margin: 1rem 0 0 0;
+}
+.contacts__item-message-messangers {
+    margin: 1rem 0 0 0;
+    padding: 0;
+    list-style: none;
+
+    // display: flex;
+    // flex-wrap: wrap;
+    li {
+        // flex: 0 1 auto;
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 1rem 2rem 0;
+        a {
+            img {
+                display: inline-block;
+                vertical-align: top;
+                max-width: 100%;
+                width: auto;
+                height: auto;
+            }
+        }
+    }
+}
+.contacts__item-message-link {
+    margin: 1rem 0 0 0;
+    font-weight: 700;
+    a {
+        color: $main-color;
+        transition: all .5s ease;
+        &:hover, &:active {
+            color: $main-color-gradient;
+        }
+    }
+}
+
+.contacts__map {
+    flex: 0 0 auto;
+    width: calc(66.66% - 2rem);
+    margin: 0 1rem 6rem 1rem;
+    min-height: 50rem;
+}
+.contacts__form {
+    order: 1;
+    //flex: 0 0 auto;
+    //width: calc(33.33% - 2rem);
+    //margin: 0 1rem;
+    padding: 2rem;
+    background-color: #ecf8ff;
+}
+.contacts__form-text {
+    margin: 0;
+}
+.contacts__form-title {
+    margin: 0;
+    font-size: 2.6rem;
+}
+.contacts__form-input {
+
+    display: block;
+    width: 100%;
+    height: 5.4rem;
+    margin: 2rem 0 0 0;
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+    border-radius: 0;
+
+
+    padding: 1rem 0;
+    border: none;
+    border-bottom: 3px solid $main-color;
+    font: inherit;
+    transition: all .5s ease;
+    &:hover, &:focus {
+        border-color: $main-color-gradient;
+    }
+}
+
+.contacts__form-textarea {
+    min-height: 12rem;
+    resize: vertical;
+    display: block;
+    width: 100%;
+    margin: 4rem 0 0 0;
+    background-color: #fff;
+    outline: none;
+    box-shadow: none;
+    border-radius: 0;
+
+
+    padding: 1.5rem 2rem;
+    border: none;
+    font: inherit;
+    transition: all .5s ease;
+    // &:hover, &:focus {
+    //     border-color: $main-color-gradient;
+    // }
+}
+.contacts__form-submit {
+    margin: 3.4rem 0 0 0;
+}
+@media only screen and (max-width : 1200px) {
+
+}
+
+@media only screen and (max-width : 992px) {
+
+}
+
+@media only screen and (max-width : 768px) {
+    // .contacts__top {
+    //     justify-content: center;
+    // }
+    .contacts__item {
+
+        //text-align: center;
+    }
+    .contacts__address,
+    .contacts__phone,
+    .contacts__message,
+    .contacts__form {
+        width: calc(50% - 2rem);
+    }
+    .contacts__map {
+        width: calc(100% -  2rem);
+        //margin: 6rem 0 0 0;
+    }
+    .contacts__form {
+        order: 0;
+    }
+}
+
+@media only screen and (max-width : 640px) {
+    .contacts__top {
+        justify-content: center;
+    }
+    .contacts__item {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width : 480px) {
+    .contacts__box {
+        display: block;
+    }
+    .contacts__address,
+    .contacts__phone,
+    .contacts__message {
+        text-align: center;
+    }
+    .contacts__address,
+    .contacts__phone,
+    .contacts__message,
+    .contacts__form {
+        width: auto;
+        //margin: 0 1rem 6rem 1rem;
+    }
+}
+
+@media only screen and (max-width : 360px) {
+
+}

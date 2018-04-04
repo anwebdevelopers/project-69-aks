@@ -4,6 +4,7 @@
 }
 .completed__title.title {
     font-size: 3.8rem;
+    padding-right: 10rem;
 }
 .completed__box {
     margin-top: 2rem;
@@ -16,6 +17,7 @@
     &.owl-carousel {
         display: block;
         width: auto;
+        margin-top: -4.5rem;
         padding: 6rem 0 0 0;
         .owl-stage {
             display: flex;
@@ -34,7 +36,6 @@
             position: absolute;
             top: 0;
             right: 1rem;
-            left: 1rem;
             // left: -7rem;
             // right: -7rem;
             //top: 37%;
@@ -214,10 +215,16 @@
 }
 
 @media only screen and (max-width : 640px) {
+    .completed__title.title {
+        padding-right: 0;
+    }
     .completed__box {
         display: block;
+
         &.owl-carousel {
+            margin-top: 2rem;
             .owl-nav {
+                left: 1rem;
                 justify-content: center;
             }
         }
