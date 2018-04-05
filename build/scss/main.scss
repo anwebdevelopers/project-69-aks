@@ -88,7 +88,7 @@ a {
 }
 .button {
 	@include btn;
-	padding: 1.2rem 3rem;
+	padding: 1.2rem 2rem;
 	font-size: 1.2rem;
 	font-weight: 700;
 	line-height: 1.4;
@@ -159,6 +159,9 @@ h2.title {
 @import "components/about.scss";
 @import "components/keys.scss";
 @import "components/contacts.scss";
+@import "components/project.scss";
+@import "components/advantages.scss";
+@import "components/place.scss";
 
 @import "components/footer.scss";
 

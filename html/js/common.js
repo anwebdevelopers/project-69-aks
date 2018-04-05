@@ -79,45 +79,68 @@ $(function() {
     /*******************************************************/
 
     $('.header__banner').each(function() {
-        $(this).find('.header__banner-img-item').not(':first').hide();
-        $(this).find('.header__banner-text-item').not(':first').hide();
-        $(this).find('.header__banner-text').after('<div class="header__banner-dots"></div>');
-        var length = $(this).find('.header__banner-text-item').length;
-        for ( var i = 0; i < length; i++ ) {
-            $(this).find('.header__banner-dots').append('<div class="header__banner-dot"></div>');
-        }
-        $(this).find('.header__banner-dots').on('click', '.header__banner-dot:not(.active)', function() {
-            $(this).addClass('active').siblings().removeClass('active').closest('.header__banner').find('.header__banner-img-item').eq($(this).index()).fadeIn(300).siblings().fadeOut(300).end().end().end().find('.header__banner-text-item').eq($(this).index()).slideDown(300).siblings().slideUp(300);
-        });
+        var $this = $(this);
+        $this.find('.header__banner-img-item').not(':first').hide();
+        $this.find('.header__banner-text-item').not(':first').hide();
+        $this.find('.header__banner-text').after('<div class="header__banner-dots"></div>');
+        $this.find('.header__banner-text-item').each(function(){
+            $(this).closest('.header__banner').find('.header__banner-dots').append('<div class="header__banner-dot"></div>');
+        })
+        $this.find('.header__banner-dots').on('click', '.header__banner-dot:not(.active)', function() {
+            $(this).addClass('active').siblings().removeClass('active').closest('.header__banner').find('.header__banner-img-item').eq($(this).index()).stop().fadeIn(1000).siblings().stop().fadeOut(1000).end().end().end().find('.header__banner-text-item').eq($(this).index()).stop().slideDown(300).siblings().stop().slideUp(300);
+        }).find('.header__banner-dot').first().addClass('active');
+        setInterval( function() {
+            if ( $this.find('.header__banner-dot.active').index()+1 != $this.find('.header__banner-dot').length ) {
+                $this.find('.header__banner-dot').eq($('.header__banner-dot.active').index() + 1).click();
+            } else {
+                $this.find('.header__banner-dot').first().click();
+            }
+        }, 6000);
     });
 
     //*****************************************************//
     //GOOGLE MAP
     //*****************************************************//
-    if(typeof google === 'object' && typeof google.maps === 'object' && $('#map').length) {
-        var markerPosition = new google.maps.LatLng(57.610287, 39.881991);
-
-        function initialize() {
+    if(typeof google === 'object' && typeof google.maps === 'object') {
+        function initializeMap() {
             var loc, map;
+             if ( $('#contacts-map').length ) {
+                 loc = new google.maps.LatLng(57.610287, 39.881991);
 
-            loc = new google.maps.LatLng(57.610287, 39.881991);
+                 map = new google.maps.Map(document.getElementById('contacts-map'), {
+                      zoom: 15,
+                      center: loc,
+                      mapTypeId: google.maps.MapTypeId.ROADMAP,
+                      scrollwheel: false
+                 });
 
-            map = new google.maps.Map(document.getElementById('map'), {
-                 zoom: 15,
-                 center: loc,
-                 mapTypeId: google.maps.MapTypeId.ROADMAP,
-                 scrollwheel: false
-            });
+                 var marker = new google.maps.Marker({
+                     map: map,
+                     position: loc,
+                     visible: true,
+                     icon: 'img/icon-contacts-map.png'
+                 });
+             } else if ( $('#place-map').length ) {
+                 loc = new google.maps.LatLng(57.603495, 39.822103);
 
-            var marker = new google.maps.Marker({
-                map: map,
-                position: markerPosition,
-                visible: true,
-                icon: 'img/icon-map.png'
-            });
+                 map = new google.maps.Map(document.getElementById('place-map'), {
+                      zoom: 15,
+                      center: loc,
+                      mapTypeId: google.maps.MapTypeId.ROADMAP,
+                      scrollwheel: false
+                 });
+
+                 var marker = new google.maps.Marker({
+                     map: map,
+                     position: loc,
+                     visible: true,
+                     icon: 'img/icon-place-map.png'
+                 });
+             }
+
         }
-        initialize();
-        google.maps.event.addDomListener(window, 'load', initialize);
+        initializeMap();
+        google.maps.event.addDomListener(window, 'load', initializeMap);
     }
 
     //************************************************************
