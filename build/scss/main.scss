@@ -118,6 +118,14 @@ a {
 		// 	border-color: $main-color;
 		// }
 	}
+	&.button_orange {
+		color: #fff;
+		background-color: $main-color;
+		&:hover, &:active {
+			background-color: $main-color-gradient;
+			border-color: $main-color-gradient;
+		}
+	}
 	&:hover, &:active {
 		color: #fff;
 		background-color: $main-color;
@@ -162,10 +170,11 @@ h2.title {
 @import "components/project.scss";
 @import "components/advantages.scss";
 @import "components/place.scss";
+@import "components/plan.scss";
 
 @import "components/footer.scss";
 
-//@import "build/scss/components/magnific-popup.scss";
+
 
 //ALWAYS END
 //@import "components/media.scss";
@@ -176,7 +185,8 @@ h2.title {
 //@import "html/libs/superfish/dist/css/superfish";
 //@import "html/libs/font-awesome/scss/font-awesome.scss";
 //@import "html/libs/jQuery.mmenu/dist/css/jquery.mmenu.all";
-//@import "html/libs/magnific-popup/dist/magnific-popup";
+@import "build/scss/components/magnific-popup.scss";
+@import "html/libs/magnific-popup/dist/magnific-popup";
 
 @media only screen and (max-width : 1200px) {
 	html {

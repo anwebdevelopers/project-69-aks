@@ -98,9 +98,36 @@ $(function() {
         }, 6000);
     });
 
-    //*****************************************************//
+    /*******************************************************/
+    //TABS
+    /*******************************************************/
+
+    $('.tabs').each(function() {
+        $(this).children('.tabs__item').not(':first').hide(),
+        $(this).children('.tabs__buttons').on('click', 'button:not(.active)', function() {
+            $(this).addClass('active').siblings().removeClass('active').closest('.tabs').children('.tabs__item').stop().slideUp(300).eq($(this).index()).stop().slideDown(300);
+        }).children('button').first().addClass('active');
+    });
+
+
+    /*******************************************************/
+    //POPUP
+    /*******************************************************/
+    $('.popup-with-move-anim').magnificPopup({
+        type: 'inline',
+        fixedContentPos: false,
+        fixedBgPos: true,
+        overflowY: 'auto',
+        closeBtnInside: true,
+        preloader: false,
+        midClick: true,
+        removalDelay: 300,
+        mainClass: 'my-mfp-slide-bottom'
+    });
+
+    /*****************************************************/
     //GOOGLE MAP
-    //*****************************************************//
+    /*****************************************************/
     if(typeof google === 'object' && typeof google.maps === 'object') {
         function initializeMap() {
             var loc, map;
