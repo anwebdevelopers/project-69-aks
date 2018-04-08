@@ -22,9 +22,9 @@
 
 </head>
 
-<body>
+<body class="complex">
 
-	<header class="header header_fullscreen">
+	<header class="header header_fullscreen slide" data-name="header">
 		<div class="container">
 			<div class="header__box">
 				<figure class="header__logo">
@@ -92,11 +92,12 @@
 					<p class="header__banner-text-item">Комфорт в 10 минутах от центра</p>
 					<p class="header__banner-text-item">В 10 минутах от центра Комфорт</p>
 				</div>
+				<button class="header__banner-button"></button>
 			</div>
 		</div>
 	</header>
 
-	<section class="project">
+	<section class="project slide" data-name="project">
 		<div class="container">
 			<h2 class="title title_orange">О проекте</h2>
 			<div class="project__box">
@@ -125,8 +126,9 @@
 		</div>
 	</section>
 
-	<section class="advantages">
+	<section class="advantages slide" data-name="advantages">
 		<div class="container">
+			<h2 class="title title_orange">Преимущества</h2>
 			<div class="advantages__box">
 				<div class="advantages__item">
 					<figure class="advantages__item-img">
@@ -174,7 +176,7 @@
 		</div>
 	</section>
 
-	<section class="place">
+	<section class="place slide" data-name="place">
 		<div class="container">
 			<h2 class="title title_orange">Расположение</h2>
 			<div class="place__box">
@@ -222,7 +224,7 @@
 		</div>
 	</section>
 
-	<section class="plan">
+	<section class="plan slide" data-name="plan">
 		<div class="container">
 			<h2 class="title title_orange">Квартиры и планировки</h2>
 			<div class="plan__head">
@@ -671,7 +673,212 @@
 		</div>
 	</section>
 
-	<footer class="footer">
+	<section class="report slide" data-name="report">
+		<div class="container">
+			<h2 class="title title_orange">Ход строительства</h2>
+			<div class="report__head">
+				<div class="report__head-subtitle">
+					<p>ФОТО СО СТРОЙПЛОЩАДКИ</p>
+				</div>
+				<div class="report__head-text">
+					<p>Хотите проверить ход строительства самостоятельно?</p>
+				</div>
+				<div class="report__head-button"><a href="#" class="button">ЗАПИШИТЕСЬ НА ПРОСМОТР</a></div>
+			</div>
+			<div class="report__gallery carousel">
+				<div class="report__gallery-item">
+					<figure class="report__gallery-img">
+						<img src="img/img-report1.jpg" alt="">
+					</figure>
+					<h3 class="report__gallery-title">декабрь 2017</h3>
+					<div class="report__gallery-text">25 фото</div>
+					<div class="report__gallery-links gallery">
+						<a href="img/img-report1.jpg"></a>
+						<a href="img/img-report2.jpg"></a>
+						<a href="img/img-report3.jpg"></a>
+					</div>
+				</div>
+				<div class="report__gallery-item">
+					<figure class="report__gallery-img">
+						<img src="img/img-report2.jpg" alt="">
+					</figure>
+					<h3 class="report__gallery-title">НОЯБРЬ 2017</h3>
+					<div class="report__gallery-text">12 фото</div>
+					<div class="report__gallery-links gallery">
+						<a href="img/img-report1.jpg"></a>
+						<a href="img/img-report2.jpg"></a>
+						<a href="img/img-report3.jpg"></a>
+					</div>
+				</div>
+				<div class="report__gallery-item">
+					<figure class="report__gallery-img">
+						<img src="img/img-report3.jpg" alt="">
+					</figure>
+					<h3 class="report__gallery-title">ОКТЯБРЬ 2017</h3>
+					<div class="report__gallery-text">15 фото</div>
+					<div class="report__gallery-links gallery">
+						<a href="img/img-report1.jpg"></a>
+						<a href="img/img-report2.jpg"></a>
+						<a href="img/img-report3.jpg"></a>
+					</div>
+				</div>
+				<div class="report__gallery-item">
+					<figure class="report__gallery-img">
+						<img src="img/img-report4.jpg" alt="">
+					</figure>
+					<h3 class="report__gallery-title">СЕНТЯБРЬ 2017</h3>
+					<div class="report__gallery-text">3 фото</div>
+					<div class="report__gallery-links gallery">
+						<a href="img/img-report1.jpg"></a>
+						<a href="img/img-report2.jpg"></a>
+						<a href="img/img-report3.jpg"></a>
+					</div>
+				</div>
+				<div class="report__gallery-item">
+					<figure class="report__gallery-img">
+						<img src="img/img-report2.jpg" alt="">
+					</figure>
+					<h3 class="report__gallery-title">НОЯБРЬ 2017</h3>
+					<div class="report__gallery-text">12 фото</div>
+					<div class="report__gallery-links gallery">
+						<a href="img/img-report1.jpg"></a>
+						<a href="img/img-report2.jpg"></a>
+						<a href="img/img-report3.jpg"></a>
+					</div>
+				</div>
+				<div class="report__gallery-item">
+					<figure class="report__gallery-img">
+						<img src="img/img-report3.jpg" alt="">
+					</figure>
+					<h3 class="report__gallery-title">ОКТЯБРЬ 2017</h3>
+					<div class="report__gallery-text">15 фото</div>
+					<div class="report__gallery-links gallery">
+						<a href="img/img-report1.jpg"></a>
+						<a href="img/img-report2.jpg"></a>
+						<a href="img/img-report3.jpg"></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="report__history">
+				<figure class="report__history-img">
+					<img src="img/img-report-history.png" alt="">
+				</figure>
+				<div class="report__history-content">
+					<h3 class="report__history-title">ИСТОРИЯ ИЗМЕНЕНИЙ</h3>
+					<div class="report__history-slider slider">
+						<div class="report__history-item">
+							<div class="report__history-item-title">21 января 2018</div>
+							<div class="report__history-item-text">
+								<p>Монтаж шпунтового ограждения и разработка котлована, подготовительные работы по устройству бытового строительного городка и временных дорог и проездов.</p>
+							</div>
+						</div>
+						<div class="report__history-item">
+							<div class="report__history-item-title">21 января 2018</div>
+							<div class="report__history-item-text">
+								<p>Монтаж шпунтового ограждения и разработка котлована, подготовительные работы по устройству бытового строительного городка и временных дорог и проездов.</p>
+							</div>
+						</div>
+						<div class="report__history-item">
+							<div class="report__history-item-title">21 января 2018</div>
+							<div class="report__history-item-text">
+								<p>Монтаж шпунтового ограждения и разработка котлована, подготовительные работы по устройству бытового строительного городка и временных дорог и проездов.</p>
+							</div>
+						</div>
+					</div>
+					<div class="report__history-progress">
+						<div class="report__history-progress-title">ГОТОВНОСТЬ</div>
+						<div class="report__history-progress-bar" style="background-size: 40% 100%;"></div>
+					</div>
+					<div class="report__history-deadline">
+						<div class="report__history-deadline-title">ПЛАНИРУЕМЫЙ СРОК СДАЧИ</div>
+						<div class="report__history-deadline-date">18.12.2018</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</section>
+
+	<section class="buy slide" data-name="buy">
+		<div class="container">
+			<h2 class="title title_orange">Как купить</h2>
+			<div class="buy__top">
+				<div class="buy__top-left">
+					<div class="buy__top-left-content">
+						<h3 class="buy__top-left-title">оставьте заявку на расчет ипотеки</h3>
+						<div class="buy__top-left-text">
+							<p>Наш специалист поможет подобрать выгодные условия, собрать документы и получить одобрение по ипотеке</p>
+						</div>
+						<div class="buy__top-left-button">
+							<a href="#" class="button button_white">оставить заявку</a>
+						</div>
+					</div>
+					<figure class="buy__top-left-img">
+						<img src="img/img-buy.png" alt="">
+					</figure>
+				</div>
+				<div class="buy__top-right">
+					<div class="buy__top-right-icon">
+						<img src="img/img-buy-icon.png" alt="">
+					</div>
+					<div class="buy__top-right-text">
+						<p>Чтобы приобрести понравившуюся квартиру, вам нужно выбрать и забронировать ее в офисе продаж или по телефону +7 (4852) 33-02-96</p>
+					</div>
+					<div class="buy__top-right-button">
+						<a href="#" class="button">ОСТАВИТЬ ЗАВКУ НА ПРОСМОТР</a>
+					</div>
+				</div>
+			</div>
+			<div class="buy__variants">
+				<h3 class="buy__variants-title">ВАРИАНТЫ ПОКУПКИ</h3>
+				<div class="buy__variants-box">
+					<div class="buy__variants-item">
+						<h4 class="buy__variants-item-title">100% предоплата</h4>
+						<p class="buy__variants-item-text">Полная стоимость договора долевого участия. Индивидуальные условия при внесении 100% предоплаты.</p>
+					</div>
+					<div class="buy__variants-item">
+						<h4 class="buy__variants-item-title">ИПОТЕКА</h4>
+						<p class="buy__variants-item-text">У нас 8 банков-партнёров, которые предоставляют льготные условия покупателям квартир в жилых комплексах ГК АКС.</p>
+					</div>
+					<div class="buy__variants-item">
+						<h4 class="buy__variants-item-title">ВОЕННЫЙ СЕРТИФИКАТ</h4>
+						<p class="buy__variants-item-text">Благодаря тому, что все объекты АКС Групп возводятся в соответствии с федеральным законом ФЗ-214, Вы можете воспользоваться средствами субсидий и социальных выплат, в том числе военным сертификатом.</p>
+					</div>
+					<div class="buy__variants-item">
+						<h4 class="buy__variants-item-title">МАТЕРИНСКИЙ КАПИТАЛ</h4>
+						<p class="buy__variants-item-text">В качестве первого взноса без повышения ставки: Сбербанк, Абсолют банк, ТКБ, ВТБ24.</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<section class="document slide" data-name="document">
+		<div class="container">
+			<h2 class="title title_orange">Документы</h2>
+			<div class="document__box">
+				<div class="document__content">
+					<h3 class="document__content-title">214-ФЗ</h3>
+					<div class="document__content-text">
+						<p>Застройщик проекта «ЖК на Закгейма» работает по 214 Федеральному закону «Об участии в долевом строительстве». Продажи на всех объектах компании открываются только после получения всех необходимых документов и разрешения на строительство — это позволяет нам гарантировать, что все клиенты получат свои квартиры.</p>
+					</div>
+				</div>
+				<div class="document__download">
+					<a href="#" class="document__download-item">проектная декларация</a>
+					<a href="#" class="document__download-item">заключение экспертизы</a>
+					<a href="#" class="document__download-item">заключение о соответствии застройщика</a>
+					<a href="#" class="document__download-item">разрешение на строительство</a>
+					<a href="#" class="document__download-item">устав застройщика</a>
+					<a href="#" class="document__download-item">договор долевого участия</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer slide" data-name="footer">
 		<div class="container">
 			<div class="footer__box">
 				<div class="footer__contacts">
@@ -709,7 +916,6 @@
 			</div>
 		</div>
 	</footer>
-
 
 	<div class="hidden">
 		<!-- ***************************************************** -->

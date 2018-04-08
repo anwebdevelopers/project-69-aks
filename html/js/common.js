@@ -125,6 +125,28 @@ $(function() {
         mainClass: 'my-mfp-slide-bottom'
     });
 
+    /*******************************************************/
+    //GALLERY POPUP
+    /*******************************************************/
+
+    $('.gallery').each(function() {
+        $(this).magnificPopup({
+    		delegate: 'a',
+    		type: 'image',
+    		gallery: {
+    			enabled: true,
+    			navigateByImgClick: true,
+    			preload: [0,1]
+    		}
+    	});
+    });
+
+    $('.report__gallery-item').each(function() {
+        $(this).on('click', function() {
+            $(this).find('a').first().trigger('click');
+        });
+    });
+
     /*****************************************************/
     //GOOGLE MAP
     /*****************************************************/
@@ -173,65 +195,57 @@ $(function() {
     //************************************************************
     //SECTION SCROLL
     //************************************************************
-    // var scrollifyOpt = {
-    //     section: '.section',
-    //     sectionName: 'name',
-    //
-    //     before: function(i, sections) {
-    //
-    //         var sectionHref = sections[i].attr('data-name').replace(/\s+/g, '-'),
-    //             sectionColor = sections[i].attr('data-color');
-    //
-    //         $('.section').removeClass('active');
-    //         sections[i].addClass('active');
-    //
-    //         $('.pagination a').removeClass('active');
-    //         $('.pagination').find('a[href=\"#' + sectionHref + '\"]').addClass('active');
-    //         $('body').attr('data-color', sectionColor);
-    //         console.log( );
-    //         if (sections[i].index('.section') === sections.length - 1) {
-    //             $('.footer__button-scroll-top').fadeIn();
-    //             $('.footer__button-scroll-down').fadeOut();
-    //         } else {
-    //             $('.footer__button-scroll-down').fadeIn();
-    //             $('.footer__button-scroll-top').fadeOut();
-    //         }
-    //     },
-    //     afterRender: function(i, sections) {
-    //         var pagination = '<div class=\"pagination\">',
-    //             activeClass = '';
-    //         $('.section').each(function(i) {
-    //             activeClass = '';
-    //             var sectionName = $(this).attr('data-name'),
-    //                 href = sectionName.replace(/\s+/g, '-');
-    //             if (i === 0) {
-    //                 activeClass = 'active';
-    //             }
-    //             pagination += '<a class=\"' + activeClass + '\" href=\"#' + href + '\"></a>';
-    //         });
-    //         pagination += "</div>";
-    //         $('body').prepend(pagination);
-    //
-    //
-    //         $('.pagination a, .menu a').on('click', function() {
-    //             $.scrollify.move($(this).attr('href'));
-    //         });
-    //         $('.footer__button-scroll-down').on('click', $.scrollify.next);
-    //     }
-    // };
-    //
-    // function initialScroll(opt) {
-    //     if ($(window).width() <= 1200 || $(window).height() <= 620) {
-    //        $.scrollify.setOptions({setHeights:false});
-    //        $.scrollify.disable();
-    //        $('body').removeAttr('data-color')
-    //        $('.section').removeAttr('style').removeClass('active');
-    //     } else {
-    //        $.scrollify(opt);
-    //        $.scrollify.enable();
-    //        $.scrollify.setOptions({setHeights:true});
-    //     }
-    // }
-    // initialScroll(scrollifyOpt);
+
+    if ( $('.complex').length ) {
+        var scrollifyOpt = {
+            section : '.slide',
+            sectionName: 'name',
+            setHeights : false,
+            before: function(i, sections) {
+
+                var sectionHref = sections[i].attr('data-name');
+
+                $('.slide').removeClass('active');
+                sections[i].addClass('active');
+
+                $('.pagination a').removeClass('active');
+                $('.pagination').find('a[href=\"#' + sectionHref + '\"]').addClass('active');
+            },
+            afterRender: function(i, sections) {
+                var pagination = '<div class=\"pagination\">',
+                    activeClass = '';
+                $('.slide').each(function(i) {
+                    activeClass = '';
+                    var sectionName = $(this).attr('data-name'),
+                        href = sectionName;
+                    if (i === 0) {
+                        activeClass = 'active';
+                    }
+                    pagination += '<a class=\"' + activeClass + '\" href=\"#' + href + '\"></a>';
+                });
+                pagination += "</div>";
+                $('body').prepend(pagination);
+
+
+                $('.pagination a').on('click', function() {
+                    $.scrollify.move($(this).attr('href'));
+                });
+                $('.header__banner-button').on('click', $.scrollify.next);
+            }
+        };
+        function initialScroll(opt) {
+            if ( $(window).width() <= 1380 ) {
+               $.scrollify.disable();
+               $('.slide').removeAttr('style').removeClass('active');
+            } else {
+               $.scrollify(opt);
+               $.scrollify.enable();
+            }
+        }
+        initialScroll(scrollifyOpt);
+        $(window).resize(function() {
+            initialScroll(scrollifyOpt);
+        });
+    }
 
 });

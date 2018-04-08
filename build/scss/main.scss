@@ -98,6 +98,7 @@ a {
 	border: 2px solid $main-color;
 	//background-color: $red;
 	transition: all .5s ease;
+	text-align: center;
 
 	&.button_black {
 		color: #000;
@@ -121,15 +122,15 @@ a {
 	&.button_orange {
 		color: #fff;
 		background-color: $main-color;
-		&:hover, &:active {
-			background-color: $main-color-gradient;
-			border-color: $main-color-gradient;
-		}
+		// &:hover, &:active {
+		// 	background-color: $main-color-gradient;
+		// 	border-color: $main-color-gradient;
+		// }
 	}
 	&:hover, &:active {
 		color: #fff;
-		background-color: $main-color;
-		border-color: $main-color;
+		background-color: $main-color-gradient;
+		border-color: $main-color-gradient;
 	}
 }
 .title {
@@ -171,9 +172,11 @@ h2.title {
 @import "components/advantages.scss";
 @import "components/place.scss";
 @import "components/plan.scss";
-
+@import "components/report.scss";
+@import "components/buy.scss";
+@import "components/document.scss";
 @import "components/footer.scss";
-
+@import "components/slide.scss";
 
 
 //ALWAYS END

@@ -1,5 +1,5 @@
 .plan {
-    margin: 6rem 0 0 0;
+    padding: 6rem 0 0 0;
 }
 .plan__head {
     margin: 6rem 0 0 0;
@@ -20,7 +20,7 @@
 .plan__head-button {
     flex: 0 0 auto;
     width: calc(50% - 1rem);
-    margin: 2rem 0 0 0;
+    margin: 0 0 0 2rem;
 
     display: flex;
     flex-wrap: wrap;
@@ -369,6 +369,19 @@
 }
 
 @media only screen and (max-width : 640px) {
+    .plan__head {
+        display: block;
+    }
+    .plan__head-text {
+        width: auto;
+        text-align: center;
+    }
+    .plan__head-button {
+        width: auto;
+        margin: 4rem 0 0 0;
+
+        flex-direction: column;
+    }
     .plan__box {
         display: block;
     }
